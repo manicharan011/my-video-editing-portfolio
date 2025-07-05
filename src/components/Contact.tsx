@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Instagram, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MessageCircle, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,13 +8,22 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      
+      // Reset success state after 3 seconds
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,25 +38,25 @@ const Contact = () => {
       name: 'LinkedIn',
       icon: Linkedin,
       url: '#linkedin',
-      color: 'hover:text-blue-500'
+      color: 'hover:text-blue-500 hover:shadow-[0_0_20px] hover:shadow-blue-500/30'
     },
     {
       name: 'Instagram',
       icon: Instagram,
       url: '#instagram',
-      color: 'hover:text-pink-500'
+      color: 'hover:text-pink-500 hover:shadow-[0_0_20px] hover:shadow-pink-500/30'
     },
     {
       name: 'WhatsApp',
       icon: MessageCircle,
       url: '#whatsapp',
-      color: 'hover:text-green-500'
+      color: 'hover:text-green-500 hover:shadow-[0_0_20px] hover:shadow-green-500/30'
     },
     {
       name: 'Email',
       icon: Mail,
       url: 'mailto:your.email@example.com',
-      color: 'hover:text-accent'
+      color: 'hover:text-accent hover:shadow-[0_0_20px] hover:shadow-accent/30'
     }
   ];
 
@@ -61,7 +70,7 @@ const Contact = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to bring your video vision to life? Get in touch and let's create something amazing together.
+              Ready to bring your video vision to life? Reach me via any platform.
             </p>
           </div>
 
@@ -69,6 +78,13 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="glass-card p-8 rounded-2xl">
               <h3 className="text-2xl font-semibold mb-6 text-foreground">Send Me a Message</h3>
+              
+              {isSubmitted && (
+                <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center space-x-3 animate-fade-in">
+                  <CheckCircle className="text-green-500" size={20} />
+                  <span className="text-green-500 font-medium">Message sent successfully! I'll get back to you soon.</span>
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -82,7 +98,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:shadow-[0_0_15px] focus:shadow-primary/20 transition-all duration-300"
                     placeholder="John Doe"
                   />
                 </div>
@@ -98,7 +114,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:shadow-[0_0_15px] focus:shadow-primary/20 transition-all duration-300"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -114,17 +130,31 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:shadow-[0_0_15px] focus:shadow-primary/20 transition-all duration-300 resize-none"
                     placeholder="Tell me about your project, timeline, and vision..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
+                    isSubmitting 
+                      ? 'bg-muted cursor-not-allowed' 
+                      : 'bg-primary hover:bg-primary/90 hover:scale-105 hover:shadow-[0_0_20px] hover:shadow-primary/50'
+                  } text-primary-foreground`}
                 >
-                  <Send size={20} />
-                  <span>Send Message</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -142,12 +172,12 @@ const Contact = () => {
                   </p>
                   
                   <div className="flex items-center space-x-3">
-                    <Mail className="text-primary" size={20} />
+                    <Mail className="text-primary animate-pulse" size={20} />
                     <span className="text-foreground">your.email@example.com</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <MessageCircle className="text-primary" size={20} />
+                    <MessageCircle className="text-primary animate-pulse" size={20} />
                     <span className="text-foreground">Available on WhatsApp</span>
                   </div>
                 </div>
@@ -160,7 +190,7 @@ const Contact = () => {
                       <a
                         key={social.name}
                         href={social.url}
-                        className={`p-3 glass-card rounded-lg transition-all duration-300 hover:scale-110 ${social.color}`}
+                        className={`p-4 glass-card rounded-lg transition-all duration-300 hover:scale-110 ${social.color}`}
                         title={social.name}
                       >
                         <social.icon size={24} />
@@ -182,7 +212,11 @@ const Contact = () => {
                     '💡 Creative and technical expertise',
                     '📱 Multi-platform optimization'
                   ].map((benefit, index) => (
-                    <div key={index} className="text-muted-foreground">
+                    <div 
+                      key={index} 
+                      className="text-muted-foreground opacity-0 animate-[fade-in_0.6s_ease-out_forwards]"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
                       {benefit}
                     </div>
                   ))}

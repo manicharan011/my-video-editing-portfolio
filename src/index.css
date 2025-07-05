@@ -79,3 +79,14 @@
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
 }
+
+@keyframes slide-in-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
