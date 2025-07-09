@@ -72,9 +72,9 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:scale-105 transition-transform duration-300 bg-background p-2">
                 <img
-                  src="https://drive.google.com/uc?export=view&id=1AmXhNZlpZUKrZqWA69s5r4vcymEUtHDy"
+                  src="/profile.jpg"
                   alt="Khumbham Mani Charan - Video Editor"
-                  className="w-full h-full object-cover object-[center_30%]"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse"></div>

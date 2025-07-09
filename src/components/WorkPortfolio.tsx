@@ -8,7 +8,7 @@ const WorkPortfolio = () => {
     {
       title: 'TharunSpeaks Edit',
       description: 'Passion Quote Short Video',
-      thumbnail: 'https://i.ytimg.com/vi_webp/3bQ0R2y15M8/maxresdefault.webp',
+      thumbnail: '/tharun.jpg',
       platform: 'Instagram',
       views: '1 min',
       link: 'https://www.instagram.com/reel/DL5fD8TBAFF/?igsh=MTJqenMwdzZzNG1sOA==',
@@ -16,7 +16,7 @@ const WorkPortfolio = () => {
     {
       title: 'AI Talking Head',
       description: 'AI tools showcase in talking head style',
-      thumbnail: 'https://i.ytimg.com/vi_webp/0cGC8tK_uP4/maxresdefault.webp',
+      thumbnail: '/aivideo.jpg',
       platform: 'YouTube',
       views: '1 min 24 sec',
       link: 'https://www.instagram.com/reel/DLusEjHhNb9/?igsh=MXBvNDlnODd0dmc4YQ==',
@@ -24,7 +24,7 @@ const WorkPortfolio = () => {
     {
       title: 'Documentary Comparison',
       description: 'Magnetes Media vs My Edit Comparison',
-      thumbnail: 'https://i.ytimg.com/vi_webp/xjtn1gyc2n0/maxresdefault.webp',
+      thumbnail: '/comparison.jpg',
       platform: 'Instagram',
       views: '40 sec',
       link: 'https://www.instagram.com/reel/DL1qAvjBWjz/?igsh=MWo4YnQ4emp0cHE4MA==',
@@ -32,7 +32,7 @@ const WorkPortfolio = () => {
     {
       title: 'Documentary Recreate',
       description: 'Vox Style Edit Recreation',
-      thumbnail: 'https://i.ytimg.com/vi_webp/H3k1SRrnOmw/maxresdefault.webp',
+      thumbnail: '/recreate.jpg',
       platform: 'Instagram',
       views: '30 sec',
       link: 'https://www.instagram.com/reel/DL1p2pFhsTM/?igsh=bnpyejNjOGUwcW0z',
@@ -40,7 +40,7 @@ const WorkPortfolio = () => {
     {
       title: 'Motion Graphics Edit',
       description: 'Iman Gadzhi inspired motion graphics',
-      thumbnail: 'https://i.ytimg.com/vi_webp/4aR2gzrMLLA/maxresdefault.webp',
+      thumbnail: '/motion.jpg',
       platform: 'Instagram',
       views: '30 sec',
       link: 'https://www.instagram.com/reel/DL5fR89hnpR/?igsh=MW85OWlzYnhmYjljZA==',
@@ -49,25 +49,25 @@ const WorkPortfolio = () => {
 
   const longFormWorks = [
     {
-      thumbnail: 'https://i.ytimg.com/vi_webp/1sfQ8C8FC4Q/maxresdefault.webp',
+      thumbnail: '/longvideo1.jpg',
       duration: '2 min',
       type: 'Instagram',
       link: 'https://www.instagram.com/reel/DLusK7bhLIQ/?igsh=MXJwNzJzaHlteXN5ZQ==',
     },
     {
-      thumbnail: 'https://i.ytimg.com/vi_webp/kIY80c2sbp8/maxresdefault.webp',
+      thumbnail: '/long2.jpg',
       duration: '1 min 30 sec',
       type: 'Instagram',
       link: 'https://www.instagram.com/reel/DLuq-xgBfvF/?igsh=MXhhcG5ma2F3YmZybg==',
     },
     {
-      thumbnail: 'https://i.ytimg.com/vi_webp/bMFYwB6YToI/maxresdefault.webp',
+      thumbnail: '/long3.jpg',
       duration: '1 min 40 sec',
       type: 'Instagram',
       link: 'https://www.instagram.com/reel/DL1qFCIhgT-/?igsh=OWhhdW91Yzcwd2t3',
     },
     {
-      thumbnail: 'https://i.ytimg.com/vi_webp/KhM9f1Z7NdI/maxresdefault.webp',
+      thumbnail: '/long4.jpg',
       duration: '1 min 30 sec',
       type: 'Instagram',
       link: 'https://www.instagram.com/reel/DL1p9eABSS5/?igsh=N2N3cDMyeWJxMWE2',

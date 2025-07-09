@@ -10,24 +10,21 @@ const Testimonials = () => {
       role: "Soft Skills Trainer",
       company: "Udaan English Coaching, Boduppal",
       text: "Charan crafted an engaging promotional ad that helped attract new students. His creativity and clarity in storytelling are truly impressive.",
-      rating: 5,
-      image: "https://i.ibb.co/NrRJwLT/uday-kumar.jpg"
+      rating: 5
     },
     {
       name: "Vasudev Kumbham",
       role: "Mentor",
       company: "KMC MediaTech",
       text: "Charan has shown great potential in video editing. At KMC MediaTech, he quickly adapted to our workflows and delivered solid results during his internship.",
-      rating: 5,
-      image: "https://i.ibb.co/30Sn8Mn/vasudev-kumbham.jpg"
+      rating: 5
     },
     {
       name: "Eppanapelly Spoorthi",
       role: "Team Member",
       company: "E-Cell RGUKT Basar",
       text: "Charan’s edits for E-Cell RGUKT Basar’s Instagram page helped boost our engagement dramatically. He’s creative, responsive, and professional.",
-      rating: 5,
-      image: "https://i.ibb.co/YPzwstH/spoorthi.jpg"
+      rating: 5
     }
   ];
 
@@ -110,14 +107,6 @@ const Testimonials = () => {
               </div>
 
               <div className="text-center">
-                <div className="flex justify-center mb-6">
-                  <img
-                    src={testimonials[currentIndex].image}
-                    alt={testimonials[currentIndex].name}
-                    className="w-20 h-20 rounded-full object-cover border-4 border-primary/40 shadow-md"
-                  />
-                </div>
-
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed italic">
                   "{testimonials[currentIndex].text}"
                 </p>
