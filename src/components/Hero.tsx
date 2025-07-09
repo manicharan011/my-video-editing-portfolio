@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+ import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
@@ -8,7 +7,7 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const toRotate = ['Video Editor', 'Storyteller', 'AI-Driven Creator'];
+  const toRotate = ['Video Editor', 'E-Cell RGUKT Basar Editor', 'AI Tools Expert', 'Storyteller'];
 
   useEffect(() => {
     const handleType = () => {
@@ -32,7 +31,7 @@ const Hero = () => {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, toRotate]);
+  }, [text, isDeleting, loopNum, typingSpeed]);
 
   const scrollToPortfolio = () => {
     const element = document.querySelector('#work');
@@ -60,7 +59,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Content */}
       <div className="section-padding relative z-10 text-center max-w-6xl">
         <div className="animate-fade-in flex flex-col lg:flex-row items-center justify-center gap-12">
@@ -69,14 +68,12 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=500&h=500" 
+                  src="https://drive.google.com/uc?export=view&id=1AmXhNZlpZUKrZqWA69s5r4vcymEUtHDy" 
                   alt="Khumbham Mani Charan - Video Editor"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Animated ring */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse"></div>
-              {/* Glow effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 blur-xl -z-10"></div>
             </div>
           </div>
@@ -89,18 +86,18 @@ const Hero = () => {
                 Khumbham Mani Charan
               </span>
             </h1>
-            
+
             <div className="text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-8 h-12 opacity-0 animate-[fade-in_1s_ease-out_0.6s_forwards]">
               <span className="text-primary font-semibold">
                 {text}
                 <span className="animate-pulse">|</span>
               </span>
             </div>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed opacity-0 animate-[slide-in-from-bottom_1s_ease-out_0.8s_forwards]">
-              Creating powerful edits from short-form reels to long-form documentaries.
+              Transforming raw footage into stories that inspire — from reels to documentaries.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center opacity-0 animate-[fade-in_1s_ease-out_1s_forwards]">
               <button
                 onClick={scrollToPortfolio}
@@ -109,7 +106,7 @@ const Hero = () => {
                 <span className="relative z-10">View Portfolio →</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              
+
               <button
                 onClick={() => {
                   const element = document.querySelector('#contact');
@@ -125,7 +122,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown size={32} className="text-primary" />

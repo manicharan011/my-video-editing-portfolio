@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const Testimonials = () => {
@@ -7,44 +6,46 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Content Creator",
-      company: "TechTalks YouTube",
-      text: "Charan delivers stunning edits with quick turnaround and creativity. His understanding of storytelling transformed our video content completely.",
-      rating: 5
+      name: "Uday Kumar",
+      role: "Soft Skills Trainer",
+      company: "Udaan English Coaching, Boduppal",
+      text: "Charan crafted an engaging promotional ad that helped attract new students. His creativity and clarity in storytelling are truly impressive.",
+      rating: 5,
+      image: "https://i.ibb.co/NrRJwLT/uday-kumar.jpg"
     },
     {
-      name: "Mike Chen",
-      role: "Marketing Director",
-      company: "StartupHub",
-      text: "Working with Charan was a game-changer for our brand videos. His AI-powered approach and attention to detail exceeded our expectations.",
-      rating: 5
+      name: "Vasudev Kumbham",
+      role: "Mentor",
+      company: "KMC MediaTech",
+      text: "Charan has shown great potential in video editing. At KMC MediaTech, he quickly adapted to our workflows and delivered solid results during his internship.",
+      rating: 5,
+      image: "https://i.ibb.co/30Sn8Mn/vasudev-kumbham.jpg"
     },
     {
-      name: "Priya Sharma",
-      role: "Filmmaker",
-      company: "Independent",
-      text: "Exceptional talent in documentary editing. Charan brought our vision to life with cinematic quality and professional precision.",
-      rating: 5
+      name: "Eppanapelly Spoorthi",
+      role: "Team Member",
+      company: "E-Cell RGUKT Basar",
+      text: "Charan’s edits for E-Cell RGUKT Basar’s Instagram page helped boost our engagement dramatically. He’s creative, responsive, and professional.",
+      rating: 5,
+      image: "https://i.ibb.co/YPzwstH/spoorthi.jpg"
     }
   ];
 
   const clientLogos = [
-    { name: "TechTalks", logo: "🎬" },
-    { name: "StartupHub", logo: "🚀" },
-    { name: "CreativeStudio", logo: "🎨" },
-    { name: "BrandForge", logo: "⚡" },
-    { name: "MediaFlow", logo: "📺" },
-    { name: "VisualCraft", logo: "✨" }
+    { name: "E-Cell RGUKT Basar", logo: "🎓" },
+    { name: "Udaan English", logo: "🗣️" },
+    { name: "KMC MediaTech", logo: "🎥" },
+    { name: "Social Creators", logo: "📱" },
+    { name: "Coaching Brands", logo: "🏆" },
+    { name: "AI Projects", logo: "🤖" }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
-
+    }, 6000);
     return () => clearInterval(timer);
   }, [testimonials.length]);
 
@@ -62,7 +63,7 @@ const Testimonials = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              Clients & Testimonials
+              Trusted by Creators, Brands & Startups
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
           </div>
@@ -97,9 +98,9 @@ const Testimonials = () => {
                 >
                   <ChevronLeft size={24} className="text-primary" />
                 </button>
-                
+
                 <Quote size={48} className="text-primary/30" />
-                
+
                 <button
                   onClick={nextTestimonial}
                   className="p-2 rounded-full glass-card hover:bg-primary/20 transition-colors duration-300"
@@ -109,17 +110,25 @@ const Testimonials = () => {
               </div>
 
               <div className="text-center">
+                <div className="flex justify-center mb-6">
+                  <img
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    className="w-20 h-20 rounded-full object-cover border-4 border-primary/40 shadow-md"
+                  />
+                </div>
+
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed italic">
                   "{testimonials[currentIndex].text}"
                 </p>
-                
+
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                     <span key={i} className="text-accent text-xl">★</span>
                   ))}
                 </div>
-                
-                <div className="space-y-2">
+
+                <div className="space-y-1">
                   <h4 className="text-xl font-semibold text-foreground">
                     {testimonials[currentIndex].name}
                   </h4>

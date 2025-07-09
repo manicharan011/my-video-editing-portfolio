@@ -1,37 +1,51 @@
-
-const Experience = () => {
+ const Experience = () => {
   const experiences = [
     {
-      period: '2024 - Present',
+      period: 'Feb 2025 – Present',
+      role: 'Video Editor',
+      company: 'E-Cell, RGUKT Basar',
+      description:
+        'Editing promotional and documentary content for the official Instagram page of E-Cell RGUKT Basar, enhancing visual identity and engagement.',
+      highlights: [
+        'Optimized content for Reels, carousels, and IGTV',
+        'Used CapCut, After Effects, Firefly AI, and Adobe Suite',
+        'Boosted post reach and engagement on Instagram'
+      ]
+    },
+    {
+      period: 'Oct 2024 – Feb 2025',
+      role: 'Social Media Manager',
+      company: 'E-Cell, RGUKT Basar',
+      description:
+        'Managed strategy, content scheduling, and growth for the E-Cell Instagram page. Developed consistent branding and campaign coordination.',
+      highlights: [
+        'Increased followers and engagement rate',
+        'Led festival & hackathon promotion campaigns',
+        'Built monthly content calendars with creative themes'
+      ]
+    },
+    {
+      period: '2024 – Aug 2025',
       role: 'Freelance Video Editor',
-      company: 'Multiple Clients',
-      description: 'Creating compelling video content for various clients across YouTube, Instagram, and corporate platforms. Specializing in documentary-style editing and 3D visual effects.',
+      company: 'Self-employed',
+      description:
+        'Worked with various clients to deliver short-form and long-form video content. Specialized in AI-assisted editing and professional storytelling.',
       highlights: [
-        'Edited 50+ short-form videos for social media',
-        'Completed 10+ documentary projects',
-        'Collaborated with international clients'
+        'Tools: CapCut, After Effects, Firefly, Adobe Premiere Pro',
+        'Created content for startups and content creators',
+        'Managed full editing pipeline from raw to final'
       ]
     },
     {
-      period: '2023 - 2024',
-      role: 'Content Creator',
-      company: 'Personal Projects',
-      description: 'Developed expertise in AI-powered editing tools while creating educational and entertainment content. Focus on long-form storytelling and technical tutorials.',
+      period: 'Jan 2025 – Feb 2025',
+      role: 'Video Editing Intern',
+      company: 'KMC Media Tech Solutions',
+      description:
+        'Completed a 1-month internship at a professional video editing agency, contributing to client-based social and commercial edits.',
       highlights: [
-        'Mastered Adobe Creative Suite',
-        'Integrated AI tools into workflow',
-        'Built personal brand and portfolio'
-      ]
-    },
-    {
-      period: '2023',
-      role: 'B.Tech CSE Student',
-      company: 'University',
-      description: 'Pursuing Computer Science Engineering while developing technical skills that enhance my creative work. Strong foundation in programming and technology.',
-      highlights: [
-        'Strong technical background',
-        'Algorithm and data structure expertise',
-        'AI/ML coursework and projects'
+        'Worked with a creative team on fast-paced deadlines',
+        'Edited commercial reels and story-driven promos',
+        'Gained experience with client briefs and revisions'
       ]
     }
   ];
@@ -63,26 +77,28 @@ const Experience = () => {
                   <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
 
                   {/* Content */}
-                  <div className={`ml-20 md:ml-0 ${
-                    index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'
-                  } md:w-1/2`}>
+                  <div
+                    className={`ml-20 md:ml-0 ${
+                      index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'
+                    } md:w-1/2`}
+                  >
                     <div className="glass-card p-6 rounded-xl hover-lift">
                       <div className="text-primary font-semibold text-sm mb-2">
                         {exp.period}
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-foreground mb-1">
                         {exp.role}
                       </h3>
-                      
+
                       <h4 className="text-accent font-medium mb-4">
                         {exp.company}
                       </h4>
-                      
+
                       <p className="text-muted-foreground mb-4 leading-relaxed">
                         {exp.description}
                       </p>
-                      
+
                       <ul className="space-y-2">
                         {exp.highlights.map((highlight, i) => (
                           <li key={i} className="flex items-center text-sm text-muted-foreground">
@@ -102,17 +118,15 @@ const Experience = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             {[
               { number: '50+', label: 'Projects Completed' },
-              { number: '6+', label: 'Months Experience' },
-              { number: '10+', label: 'Happy Clients' },
+              { number: '1+ Year', label: 'Experience' },
+              { number: '15+', label: 'Happy Clients' },
               { number: '100%', label: 'Quality Delivered' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground text-sm">
-                  {stat.label}
-                </div>
+                <div className="text-muted-foreground text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

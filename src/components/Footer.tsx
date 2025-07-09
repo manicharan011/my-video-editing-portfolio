@@ -1,5 +1,4 @@
-
-import { Instagram, Linkedin, Mail, MessageCircle, Download, ArrowUp } from 'lucide-react';
+ import { Instagram, Linkedin, Mail, MessageCircle, Download, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,10 +12,30 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: '#linkedin', label: 'LinkedIn', color: 'hover:text-blue-500' },
-    { icon: Instagram, href: '#instagram', label: 'Instagram', color: 'hover:text-pink-500' },
-    { icon: MessageCircle, href: '#whatsapp', label: 'WhatsApp', color: 'hover:text-green-500' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email', color: 'hover:text-accent' }
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/manicharan-khumbham-a8a30429a',
+      label: 'LinkedIn',
+      color: 'hover:text-blue-500'
+    },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/__mani_charan__',
+      label: 'Instagram',
+      color: 'hover:text-pink-500'
+    },
+    {
+      icon: MessageCircle,
+      href: 'https://wa.me/919121334847',
+      label: 'WhatsApp',
+      color: 'hover:text-green-500'
+    },
+    {
+      icon: Mail,
+      href: 'mailto:khumbhammanicharan@gmail.com',
+      label: 'Email',
+      color: 'hover:text-accent'
+    }
   ];
 
   const scrollToSection = (href: string) => {
@@ -52,16 +71,15 @@ const Footer = () => {
                 Creative video editor and storyteller passionate about bringing ideas to life 
                 through the power of visual narrative and cutting-edge technology.
               </p>
-              <button
-                onClick={() => {
-                  // Handle resume download
-                  console.log('Download resume');
-                }}
+              <a
+                href="https://drive.google.com/file/d/1xqYhcJ14LlrqsRAGpkaoJp3_vH1_f862/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px] hover:shadow-primary/50"
               >
                 <Download size={16} className="group-hover:animate-bounce" />
                 <span>Download Resume</span>
-              </button>
+              </a>
             </div>
 
             {/* Quick Links */}
@@ -90,6 +108,8 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`flex items-center space-x-3 text-muted-foreground transition-all duration-300 hover:translate-x-1 ${social.color} opacity-0 animate-[fade-in_0.6s_ease-out_forwards]`}
                     style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
                   >
@@ -109,7 +129,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center space-x-6 text-sm text-muted-foreground opacity-0 animate-[fade-in_1s_ease-out_0.7s_forwards]">
-                <span>Made with ❤️ for creative storytelling</span>
+                <span>Built with passion for editing, AI, and storytelling</span>
               </div>
             </div>
           </div>

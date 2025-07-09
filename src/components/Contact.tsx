@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Instagram, Linkedin, Mail, MessageCircle, Send, CheckCircle } from 'lucide-react';
 
@@ -14,13 +13,13 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      
+
       // Reset success state after 3 seconds
       setTimeout(() => setIsSubmitted(false), 3000);
     }, 1000);
@@ -37,25 +36,25 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: '#linkedin',
+      url: 'https://www.linkedin.com/in/manicharan-khumbham-a8a30429a',
       color: 'hover:text-blue-500 hover:shadow-[0_0_20px] hover:shadow-blue-500/30'
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: '#instagram',
+      url: 'https://www.instagram.com/__mani_charan__',
       color: 'hover:text-pink-500 hover:shadow-[0_0_20px] hover:shadow-pink-500/30'
     },
     {
       name: 'WhatsApp',
       icon: MessageCircle,
-      url: '#whatsapp',
+      url: 'https://wa.me/919121334847', // <- replace with your real number
       color: 'hover:text-green-500 hover:shadow-[0_0_20px] hover:shadow-green-500/30'
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:khumbhammanicharan@gmail.com',
       color: 'hover:text-accent hover:shadow-[0_0_20px] hover:shadow-accent/30'
     }
   ];
@@ -70,7 +69,7 @@ const Contact = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to bring your video vision to life? Reach me via any platform.
+              Ready to bring your video vision to life? Reach me via any platform below.
             </p>
           </div>
 
@@ -78,14 +77,14 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="glass-card p-8 rounded-2xl">
               <h3 className="text-2xl font-semibold mb-6 text-foreground">Send Me a Message</h3>
-              
+
               {isSubmitted && (
                 <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center space-x-3 animate-fade-in">
                   <CheckCircle className="text-green-500" size={20} />
                   <span className="text-green-500 font-medium">Message sent successfully! I'll get back to you soon.</span>
                 </div>
               )}
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -163,19 +162,17 @@ const Contact = () => {
             <div className="space-y-8">
               <div className="glass-card p-8 rounded-2xl">
                 <h3 className="text-2xl font-semibold mb-6 text-foreground">Connect With Me</h3>
-                
+
                 <div className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    I'm always excited to discuss new projects and creative opportunities. 
-                    Whether you need short-form content for social media or a comprehensive 
-                    documentary, let's explore how we can bring your story to life.
+                    I'm always excited to collaborate on creative and tech projects — whether it's short-form social media content, documentary-style videos, or AI-driven solutions.
                   </p>
-                  
+
                   <div className="flex items-center space-x-3">
                     <Mail className="text-primary animate-pulse" size={20} />
-                    <span className="text-foreground">your.email@example.com</span>
+                    <span className="text-foreground">khumbhammanicharan@gmail.com</span>
                   </div>
-                  
+
                   <div className="flex items-center space-x-3">
                     <MessageCircle className="text-primary animate-pulse" size={20} />
                     <span className="text-foreground">Available on WhatsApp</span>
@@ -192,6 +189,8 @@ const Contact = () => {
                         href={social.url}
                         className={`p-4 glass-card rounded-lg transition-all duration-300 hover:scale-110 ${social.color}`}
                         title={social.name}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <social.icon size={24} />
                       </a>
@@ -212,8 +211,8 @@ const Contact = () => {
                     '💡 Creative and technical expertise',
                     '📱 Multi-platform optimization'
                   ].map((benefit, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className="text-muted-foreground opacity-0 animate-[fade-in_0.6s_ease-out_forwards]"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
