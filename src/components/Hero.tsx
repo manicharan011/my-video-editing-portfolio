@@ -14,9 +14,10 @@ const Hero = () => {
       const i = loopNum % toRotate.length;
       const fullText = toRotate[i];
 
-      setText(isDeleting 
-        ? fullText.substring(0, text.length - 1)
-        : fullText.substring(0, text.length + 1)
+      setText(
+        isDeleting
+          ? fullText.substring(0, text.length - 1)
+          : fullText.substring(0, text.length + 1)
       );
 
       setTypingSpeed(isDeleting ? 30 : 150);
@@ -41,7 +42,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-16"
+    >
       {/* Animated background particles */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20">
         <div className="absolute inset-0 opacity-20">
@@ -64,13 +68,13 @@ const Hero = () => {
       <div className="section-padding relative z-10 text-center max-w-6xl">
         <div className="animate-fade-in flex flex-col lg:flex-row items-center justify-center gap-12">
           {/* Profile Photo */}
-          <div className="opacity-0 animate-[fade-in_1s_ease-out_0.2s_forwards]">
+          <div className="opacity-0 animate-[fade-in_1s_ease-out_0.2s_forwards] mb-8 lg:mb-0">
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://drive.google.com/uc?export=view&id=1AmXhNZlpZUKrZqWA69s5r4vcymEUtHDy" 
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:scale-105 transition-transform duration-300 bg-background p-2">
+                <img
+                  src="https://drive.google.com/uc?export=view&id=1AmXhNZlpZUKrZqWA69s5r4vcymEUtHDy"
                   alt="Khumbham Mani Charan - Video Editor"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-[center_30%]"
                 />
               </div>
               <div className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse"></div>
@@ -82,9 +86,7 @@ const Hero = () => {
           <div className="flex-1 max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight opacity-0 animate-[fade-in_1s_ease-out_0.4s_forwards]">
               Hey, I'm{' '}
-              <span className="gradient-text">
-                Khumbham Mani Charan
-              </span>
+              <span className="gradient-text">Khumbham Mani Charan</span>
             </h1>
 
             <div className="text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-8 h-12 opacity-0 animate-[fade-in_1s_ease-out_0.6s_forwards]">

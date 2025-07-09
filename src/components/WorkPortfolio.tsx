@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+ import { useState } from 'react';
 import { Play, ExternalLink } from 'lucide-react';
 
 const WorkPortfolio = () => {
@@ -7,57 +6,72 @@ const WorkPortfolio = () => {
 
   const shortFormWorks = [
     {
-      title: 'Tech Review Shorts',
-      description: 'Engaging 60-second tech product reviews',
-      thumbnail: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop',
-      platform: 'Instagram Reels',
-      views: '50K+'
+      title: 'TharunSpeaks Edit',
+      description: 'Passion Quote Short Video',
+      thumbnail: 'https://i.ytimg.com/vi_webp/3bQ0R2y15M8/maxresdefault.webp',
+      platform: 'Instagram',
+      views: '1 min',
+      link: 'https://www.instagram.com/reel/DL5fD8TBAFF/?igsh=MTJqenMwdzZzNG1sOA==',
     },
     {
-      title: 'Educational Snippets',
-      description: 'Bite-sized learning content for students',
-      thumbnail: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=600&fit=crop',
-      platform: 'YouTube Shorts',
-      views: '25K+'
+      title: 'AI Talking Head',
+      description: 'AI tools showcase in talking head style',
+      thumbnail: 'https://i.ytimg.com/vi_webp/0cGC8tK_uP4/maxresdefault.webp',
+      platform: 'YouTube',
+      views: '1 min 24 sec',
+      link: 'https://www.instagram.com/reel/DLusEjHhNb9/?igsh=MXBvNDlnODd0dmc4YQ==',
     },
     {
-      title: 'Behind the Scenes',
-      description: 'Quick glimpses into the editing process',
-      thumbnail: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=600&fit=crop',
-      platform: 'TikTok',
-      views: '30K+'
+      title: 'Documentary Comparison',
+      description: 'Magnetes Media vs My Edit Comparison',
+      thumbnail: 'https://i.ytimg.com/vi_webp/xjtn1gyc2n0/maxresdefault.webp',
+      platform: 'Instagram',
+      views: '40 sec',
+      link: 'https://www.instagram.com/reel/DL1qAvjBWjz/?igsh=MWo4YnQ4emp0cHE4MA==',
     },
     {
-      title: 'AI Tools Showcase',
-      description: 'Demonstrating AI editing capabilities',
-      thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=600&fit=crop',
-      platform: 'LinkedIn',
-      views: '15K+'
-    }
+      title: 'Documentary Recreate',
+      description: 'Vox Style Edit Recreation',
+      thumbnail: 'https://i.ytimg.com/vi_webp/H3k1SRrnOmw/maxresdefault.webp',
+      platform: 'Instagram',
+      views: '30 sec',
+      link: 'https://www.instagram.com/reel/DL1p2pFhsTM/?igsh=bnpyejNjOGUwcW0z',
+    },
+    {
+      title: 'Motion Graphics Edit',
+      description: 'Iman Gadzhi inspired motion graphics',
+      thumbnail: 'https://i.ytimg.com/vi_webp/4aR2gzrMLLA/maxresdefault.webp',
+      platform: 'Instagram',
+      views: '30 sec',
+      link: 'https://www.instagram.com/reel/DL5fR89hnpR/?igsh=MW85OWlzYnhmYjljZA==',
+    },
   ];
 
   const longFormWorks = [
     {
-      title: 'Corporate Documentary',
-      description: 'Company culture and values storytelling',
-      thumbnail: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop',
-      duration: '12 min',
-      type: 'Documentary'
+      thumbnail: 'https://i.ytimg.com/vi_webp/1sfQ8C8FC4Q/maxresdefault.webp',
+      duration: '2 min',
+      type: 'Instagram',
+      link: 'https://www.instagram.com/reel/DLusK7bhLIQ/?igsh=MXJwNzJzaHlteXN5ZQ==',
     },
     {
-      title: 'Educational Series',
-      description: 'Multi-part technical tutorial series',
-      thumbnail: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop',
-      duration: '8 min',
-      type: 'Tutorial'
+      thumbnail: 'https://i.ytimg.com/vi_webp/kIY80c2sbp8/maxresdefault.webp',
+      duration: '1 min 30 sec',
+      type: 'Instagram',
+      link: 'https://www.instagram.com/reel/DLuq-xgBfvF/?igsh=MXhhcG5ma2F3YmZybg==',
     },
     {
-      title: 'Brand Story',
-      description: 'Compelling brand narrative and mission',
-      thumbnail: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop',
-      duration: '15 min',
-      type: 'Commercial'
-    }
+      thumbnail: 'https://i.ytimg.com/vi_webp/bMFYwB6YToI/maxresdefault.webp',
+      duration: '1 min 40 sec',
+      type: 'Instagram',
+      link: 'https://www.instagram.com/reel/DL1qFCIhgT-/?igsh=OWhhdW91Yzcwd2t3',
+    },
+    {
+      thumbnail: 'https://i.ytimg.com/vi_webp/KhM9f1Z7NdI/maxresdefault.webp',
+      duration: '1 min 30 sec',
+      type: 'Instagram',
+      link: 'https://www.instagram.com/reel/DL1p9eABSS5/?igsh=N2N3cDMyeWJxMWE2',
+    },
   ];
 
   return (
@@ -122,8 +136,15 @@ const WorkPortfolio = () => {
                     <h3 className="font-semibold text-foreground mb-2">{work.title}</h3>
                     <p className="text-sm text-muted-foreground mb-3">{work.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-accent font-medium">{work.views} views</span>
-                      <ExternalLink size={16} className="text-muted-foreground" />
+                      <span className="text-xs text-accent font-medium">{work.views}</span>
+                      <a
+                        href={work.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition"
+                      >
+                        <ExternalLink size={16} />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -139,7 +160,7 @@ const WorkPortfolio = () => {
                   <div className="relative aspect-video overflow-hidden">
                     <img
                       src={work.thumbnail}
-                      alt={work.title}
+                      alt="Long Form Video"
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -153,10 +174,11 @@ const WorkPortfolio = () => {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{work.title}</h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">{work.description}</p>
-                    <button className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors duration-300">
-                      <span className="font-medium">Watch Full Video</span>
+                    <button
+                      onClick={() => window.open(work.link, '_blank')}
+                      className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors duration-300"
+                    >
+                      <span className="font-medium">Watch Video</span>
                       <ExternalLink size={16} />
                     </button>
                   </div>
