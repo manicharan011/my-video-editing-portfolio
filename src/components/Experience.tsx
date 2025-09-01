@@ -1,7 +1,19 @@
  const Experience = () => {
   const experiences = [
     {
-      period: 'Feb 2025 – Present',
+      period: 'Sep 2023 – Dec 2023',
+      role: 'Social Media Manager',
+      company: 'E-Cell, RGUKT Basar',
+      description:
+        'Managed strategy, content scheduling, and growth for the E-Cell Instagram page. Developed consistent branding and campaign coordination.',
+      highlights: [
+        'Increased followers and engagement rate',
+        'Led festival & hackathon promotion campaigns',
+        'Built monthly content calendars with creative themes'
+      ]
+    },
+    {
+      period: 'Jan 2024 – Sep 2024',
       role: 'Video Editor',
       company: 'E-Cell, RGUKT Basar',
       description:
@@ -13,15 +25,15 @@
       ]
     },
     {
-      period: 'Oct 2024 – Feb 2025',
-      role: 'Social Media Manager',
-      company: 'E-Cell, RGUKT Basar',
+      period: 'Oct 2024 – Dec 2024',
+      role: 'AI Video Editing Intern',
+      company: 'KMC Media Tech Solutions',
       description:
-        'Managed strategy, content scheduling, and growth for the E-Cell Instagram page. Developed consistent branding and campaign coordination.',
+        'Completed a 3-month internship at a professional video editing agency, contributing to client-based social and commercial edits.',
       highlights: [
-        'Increased followers and engagement rate',
-        'Led festival & hackathon promotion campaigns',
-        'Built monthly content calendars with creative themes'
+        'Worked with a creative team on fast-paced deadlines',
+        'Edited commercial reels and story-driven promos',
+        'Gained experience with client briefs and revisions'
       ]
     },
     {
@@ -37,15 +49,15 @@
       ]
     },
     {
-      period: 'Jan 2025 – Feb 2025',
-      role: 'Video Editing Intern',
-      company: 'KMC Media Tech Solutions',
+      period: 'Dec 2024 – Aug 2025',
+      role: 'AI Video Editor',
+      company: 'Silicon Academy',
       description:
-        'Completed a 1-month internship at a professional video editing agency, contributing to client-based social and commercial edits.',
+        'Delivered professional editing services with advanced AI tools for creators and startups, building scalable and engaging short-form content strategies.',
       highlights: [
-        'Worked with a creative team on fast-paced deadlines',
-        'Edited commercial reels and story-driven promos',
-        'Gained experience with client briefs and revisions'
+        'AI-powered editing using Synthesia, HeyGen, ElevenLabs, and ChatGPT',
+        'Created and delivered 200+ reels/short-form videos',
+        'Worked with 10 different creators across niches'
       ]
     }
   ];
@@ -101,7 +113,10 @@
 
                       <ul className="space-y-2">
                         {exp.highlights.map((highlight, i) => (
-                          <li key={i} className="flex items-center text-sm text-muted-foreground">
+                          <li
+                            key={i}
+                            className="flex items-center text-sm text-muted-foreground"
+                          >
                             <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                             {highlight}
                           </li>
@@ -117,16 +132,18 @@
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             {[
-              { number: '50+', label: 'Projects Completed' },
-              { number: '1+ Year', label: 'Experience' },
-              { number: '15+', label: 'Happy Clients' },
+              { number: '200+', label: 'Reels/Shorts Delivered' },
+              { number: '2+ Years', label: 'Experience' },
+              { number: '10+', label: 'Creators & Clients' },
               { number: '100%', label: 'Quality Delivered' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-muted-foreground text-sm">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>

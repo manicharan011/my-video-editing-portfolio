@@ -7,7 +7,7 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const toRotate = ['Video Editor', 'E-Cell RGUKT Basar Editor', 'AI Tools Expert', 'Storyteller'];
+  const toRotate = ['Video Editor','AI powered video editor at Silicon academy' ,'E-Cell RGUKT Basar Editor', 'AI Tools Expert', 'Storyteller'];
 
   useEffect(() => {
     const handleType = () => {
@@ -71,11 +71,15 @@ const Hero = () => {
           <div className="opacity-0 animate-[fade-in_1s_ease-out_0.2s_forwards] mb-8 lg:mb-0">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:scale-105 transition-transform duration-300 bg-background p-2">
-                <img
-                  src="/profile.jpg"
-                  alt="Khumbham Mani Charan - Video Editor"
-                  className="w-full h-full object-cover object-center"
-                />
+
+  <img
+  src="/profile.png"
+  alt="Profile"
+  className="w-72 h-72 rounded-full object-cover object-[center_30%] mx-auto"
+/>
+
+
+
               </div>
               <div className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse"></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 blur-xl -z-10"></div>
